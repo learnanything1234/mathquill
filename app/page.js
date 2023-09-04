@@ -1,14 +1,14 @@
 'use client'
-import React, { useState, useEffect, createRef } from 'react';
+import React, { useState, createRef } from 'react';
 import MathInput from './components/mathquill';
 
 const Home = () => {
 
   const [inputs, setInputs] = useState([0]);
 
-  const inputRefs = inputs.map(() => createRef < HTMLDivElement > ());
+  const inputRefs = inputs.map(() => createRef());
 
-  const handleKeyDown = (e: React.KeyboardEvent<HTMLDivElement>) => {
+  const handleKeyDown = (e) => {
     if (e.key === 'Enter') {
       const newId = inputs.length > 0 ? Math.max(...inputs) + 1 : 0;
       // Insert the new input at position 1
